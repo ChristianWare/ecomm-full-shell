@@ -1,3 +1,4 @@
+import CategorySection from "@/components/CategorySection";
 import { getCategories } from "@/libs/apis";
 
 export default async function Home() {
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <main>
       <h1>Hero Section and whatever other sections you want to have here.</h1>
+      <CategorySection categories={categories} />
     </main>
   );
 }
