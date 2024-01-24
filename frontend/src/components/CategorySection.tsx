@@ -1,4 +1,5 @@
 import { Category } from "@/models/category";
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -10,9 +11,12 @@ const CategorySection = ({ categories }: Props) => {
     <div>
       <h2>Category Section</h2>
       {categories?.map((x: Category) => (
-        <Link key={x._id} href={x.slug.current}>
-          <span>{x.name}</span>
-        </Link>
+        <div key={x._id}>
+          <Link href={x.slug.current}>
+            <span>{x.name}</span>
+          </Link>
+          <Image src={x.image} alt='image' />
+        </div>
       ))}
     </div>
   );
